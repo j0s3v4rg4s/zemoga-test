@@ -203,6 +203,7 @@ $height: 310px;
   column-gap: 20px;
   background: #ebebeb;
   margin-top: 40px;
+  margin-bottom: 40px;
   color: #333333;
   align-items: center;
 
@@ -219,4 +220,17 @@ $height: 310px;
     font-size: 14px;
     font-weight: 100;
   }
+}
+
+.subtitle {
+  font-weight: 200;
+  font-size: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  grid-template-rows: 500px;
+  margin-bottom: 40px;
 }

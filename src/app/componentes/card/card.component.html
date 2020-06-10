@@ -1,0 +1,48 @@
+<div class="card" [style]="{ backgroundImage: 'url(' + image + ')' }">
+  <p class="card__name">Cristina Fern'andex de Kirchner</p>
+  <span class="card__job">{{ time }} month ago in {{ job }}</span>
+  <span class="card__body">
+    Vestibulum diam ante, porttitor a odio eget, rhoncus nerque. Aenean euvelit libero.
+  </span>
+  <div class="card__vote">
+    <button class="card__vote-btn like">
+      <span class="material-icons">
+        thumb_up
+      </span>
+    </button>
+    <button class="card__vote-btn dislike">
+      <span class="material-icons">
+        thumb_down
+      </span>
+    </button>
+    <span class="card__vote-now">Vote now</span>
+  </div>
+
+  <div class="card__vote-status like" *ngIf="like >= 50">
+    <span class="material-icons">
+      thumb_up
+    </span>
+  </div>
+  <div class="card__vote-status dislike" *ngIf="like < 50">
+    <span class="material-icons">
+      thumb_down
+    </span>
+  </div>
+  <div class="card__vote-progress">
+    <div class="card__vote-progress-item like" [style]="{ width: like + '%' }">
+      <span class="material-icons icon">
+        thumb_up
+      </span>
+      <span>{{ like }}%</span>
+    </div>
+    <div
+      class="card__vote-progress-item dislike"
+      [style]="{ width: 100 - like + '%' }"
+    >
+      <span class="material-icons icon">
+        thumb_down
+      </span>
+      <span>{{ 100 - like }}%</span>
+    </div>
+  </div>
+</div>
