@@ -16,3 +16,8 @@ Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app 
 
 Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+## Running End to end testing
+
+End to end testing was developed with cypress, then run `npm run e2e`
+
+
