@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Kanye West",
+    "img": "https://www.biography.com/.image/t_share/MTU0OTkwNDUxOTQ5MDUzNDQ3/kanye-west-attends-the-christian-dior-show-as-part-of-the-paris-fashion-week-womenswear-fall-winter-2015-2016-on-march-6-2015-in-paris-france-photo-by-dominique-charriau-wireimage-square.jpg",
+    "timeJob": 1,
+    "job": "Entertainment",
+    "vote": {
+      "likes": 64,
+      "dislike": 36,
+      "total": 100
+    }
+  },
+  {
+    "name": "Mark Zuckerberg",
+    "img": "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5c76b7d331358e35dd2773a9%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D0%26cropX2%3D4401%26cropY1%3D0%26cropY2%3D4401",
+    "timeJob": 1,
+    "job": "Business",
+    "vote": {
+      "likes": 36,
+      "dislike": 64,
+      "total": 100
+    }
+  },
+  {
+    "name": "Cristina Fernández de kirchner",
+    "img": "https://personajeshistoricos.com/wp-content/uploads/2018/06/cristina-fernandez-de-kirchner-2.jpg",
+    "timeJob": 1,
+    "job": "Politics",
+    "vote": {
+      "likes": 36,
+      "dislike": 64,
+      "total": 100
+    }
+  },
+  {
+    "name": "Malala Yousafzai",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/9/96/David_Cameron_meets_with_Malala_Yousafzai_at_the_Syria_Conference_%2824517518040%29_%28cropped%29.jpg",
+    "timeJob": 1,
+    "job": "Entertainment",
+    "vote": {
+      "likes": 64,
+      "dislike": 36,
+      "total": 100
+    }
+  }
+]
