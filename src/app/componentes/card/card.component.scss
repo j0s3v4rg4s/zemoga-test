@@ -5,6 +5,7 @@
   background-position: center center;
   height: 100%;
   position: relative;
+  overflow: auto;
   &:before {
     content: '';
     position: absolute;
@@ -99,16 +100,21 @@
     &-btn {
       color: white;
       border-radius: 0;
-      border: 1px solid transparent;
       padding: 3px 5px;
       cursor: pointer;
       margin-right: 10px;
+      border: none;
+      &:focus {
+        outline: none;
+      }
       &.like {
         background: $green;
-        border-color: white;
       }
       &.dislike {
         background: $yellow;
+      }
+      &.select {
+        border: 1px white solid;
       }
     }
 
@@ -116,6 +122,25 @@
       padding: 10px 12px;
       color: white;
       border: 1px solid white;
+      cursor: pointer;
+      &.dismiss {
+        color: rgba(255, 255, 255, 0.45);
+        border-color: rgba(255, 255, 255, 0.45);
+      }
+    }
+  }
+
+  &__dialog {
+    position: absolute;
+    color: white;
+    background: black;
+    padding: 11px;
+    top: 20px;
+    left: -200px;
+    margin: 0;
+    transition: left 300ms;
+    &.open {
+      left: 0;
     }
   }
 

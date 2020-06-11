@@ -68,11 +68,9 @@
     </span>
   </div>
 
-
   <h2 class="subtitle">Votes</h2>
 
   <div class="cards">
-    <app-card></app-card>
+    <app-card *ngFor="let item of persons; let i = index" [person]="item" [key]="i"></app-card>
   </div>
-
 </div>

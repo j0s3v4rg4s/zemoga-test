@@ -1,23 +1,28 @@
-<div class="card" [style]="{ backgroundImage: 'url(' + image + ')' }">
-  <p class="card__name">Cristina Fern'andex de Kirchner</p>
-  <span class="card__job">{{ time }} month ago in {{ job }}</span>
+<div class="card" [style]="{ backgroundImage: 'url(' + person?.img + ')' }">
+
+  <p class="card__dialog" id="{{key}}-dialog">
+    Thanks for your vote
+  </p>
+
+  <p class="card__name">{{ person.name }}</p>
+  <span class="card__job">{{ person.timeJob }} month ago in {{ person.job }}</span>
   <span class="card__body">
     Vestibulum diam ante, porttitor a odio eget, rhoncus nerque. Aenean euvelit libero.
   </span>
   <div class="card__vote">
-    <button class="card__vote-btn like">
+    <button class="card__vote-btn like" id="{{ key }}-like" (click)="clickVote(1)" *ngIf="!isVote">
       <span class="material-icons">
         thumb_up
       </span>
     </button>
-    <button class="card__vote-btn dislike">
+    <button class="card__vote-btn dislike" id="{{ key }}-dislike" (click)="clickVote(2)" *ngIf="!isVote">
       <span class="material-icons">
         thumb_down
       </span>
     </button>
-    <span class="card__vote-now">Vote now</span>
+    <span class="card__vote-now dismiss" id="{{ key }}-vote" (click)="goToVote()" *ngIf="!isVote">Vote now</span>
+    <span class="card__vote-now" (click)="isVote = false" *ngIf="isVote">Vote again</span>
   </div>
-
   <div class="card__vote-status like" *ngIf="like >= 50">
     <span class="material-icons">
       thumb_up
@@ -33,16 +38,13 @@
       <span class="material-icons icon">
         thumb_up
       </span>
-      <span>{{ like }}%</span>
+      <span>{{ like | number: '1.2-2' }}%</span>
     </div>
-    <div
-      class="card__vote-progress-item dislike"
-      [style]="{ width: 100 - like + '%' }"
-    >
+    <div class="card__vote-progress-item dislike" [style]="{ width: 100 - like + '%' }">
       <span class="material-icons icon">
         thumb_down
       </span>
-      <span>{{ 100 - like }}%</span>
+      <span>{{ 100 - like | number: '1.2-2' }}%</span>
     </div>
   </div>
 </div>
