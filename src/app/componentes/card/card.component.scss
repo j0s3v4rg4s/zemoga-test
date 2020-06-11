@@ -143,5 +143,16 @@
       left: 0;
     }
   }
+}
 
+@media screen and (max-width: 600px) {
+  .card__vote-status {
+    top: 40%;
+  }
+  .card__name {
+    bottom: 51%;
+  }
+  .card__job {
+    bottom: 48%;
+  }
 }

@@ -1,4 +1,4 @@
-@import "~src/style/variables";
+@import '~src/style/variables';
 
 $left: 50px;
 $top: 150px;
@@ -6,7 +6,7 @@ $witch: 355px;
 $height: 310px;
 
 .header {
-  background-image: url("/assets/img/fran2.jpg");
+  background-image: url('/assets/img/fran2.jpg');
   background-size: cover;
   background-position: top center;
   width: 100%;
@@ -16,7 +16,7 @@ $height: 310px;
   position: relative;
 
   &__mask {
-    background-image: url("/assets/img/fran2.jpg");
+    background-image: url('/assets/img/fran2.jpg');
     background-size: cover;
     background-position: top center;
     width: 100%;
@@ -25,7 +25,12 @@ $height: 310px;
     top: 0;
     left: 0;
     z-index: 1;
-    clip-path: polygon($left $top, calc(#{$left} + #{$witch}) $top, calc(#{$left} + #{$witch}) calc(#{$top} + #{$height}), $left calc(#{$top} + #{$height}));
+    clip-path: polygon(
+      $left $top,
+      calc(#{$left} + #{$witch}) $top,
+      calc(#{$left} + #{$witch}) calc(#{$top} + #{$height}),
+      $left calc(#{$top} + #{$height})
+    );
     filter: blur(10px);
   }
 
@@ -49,7 +54,7 @@ $height: 310px;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
         position: absolute;
-        content: "";
+        content: '';
         width: 0;
         height: 0;
         top: 15px;
@@ -74,9 +79,6 @@ $height: 310px;
         margin-left: 20px;
       }
     }
-
-
-
   }
 }
 
@@ -129,7 +131,6 @@ $height: 310px;
     position: relative;
     top: -3px;
   }
-
 }
 
 .action {
@@ -172,7 +173,6 @@ $height: 310px;
   & > .nav__link {
     margin: 0 10px;
   }
-
 
   &__title {
     font-size: 30px;
@@ -233,4 +233,113 @@ $height: 310px;
   gap: 30px;
   grid-auto-rows: 500px;
   margin-bottom: 40px;
+}
+
+.submit {
+  margin-bottom: 40px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 70px;
+  &__image {
+    background-image: url('/assets/img/submit.jpg');
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  &__text {
+    font-size: 24px;
+    color: #333333;
+    flex-grow: 1;
+  }
+  &__btn {
+    border: 2px solid #333333;
+    padding: 15px;
+    background: transparent;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.footer {
+  max-width: 900px;
+  margin: auto;
+  border-top: 2px dotted #b0b0b0;
+  padding: 40px 0;
+  display: flex;
+  color: #b0b0b0;
+  & > :first-child {
+    margin-left: 0;
+  }
+  &__link {
+    color: #b0b0b0;
+    text-decoration: none;
+    margin: 0 20px;
+  }
+  .space {
+    flex-grow: 1;
+  }
+
+  &__logo {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 400px;
+  }
+  .footer {
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+    gap: 10px;
+    &__logo {
+      margin: 0;
+    }
+  }
+  .disable {
+    display: none;
+  }
+  .nav {
+    padding: 40px 10px;
+  }
+  .submit {
+    padding: 0 5px;
+    &__text {
+      font-size: 16px;
+    }
+    &__btn {
+      font-size: 12px;
+      padding: 7px;
+      width: 119px;
+    }
+  }
+  .dialog {
+    left: 10px;
+    width: 280px;
+  }
+  .action {
+    width: 280px;
+    left: 11px;
+  }
+  .notification {
+    grid-template-columns: 1fr;
+    position: relative;
+    .close {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
 }
