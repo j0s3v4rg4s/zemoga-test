@@ -1,12 +1,12 @@
-import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { PersonModel } from 'src/core/person.model';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {PersonModel} from 'src/core/person.model';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
-export class CardComponent implements OnInit, AfterViewInit {
+export class CardComponent implements OnInit {
   @Input() key: string;
   @Input() person: PersonModel;
   @Output() onVote = new EventEmitter<void>()
@@ -19,8 +19,6 @@ export class CardComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.calculateVote();
   }
-
-
 
   clickVote(vote: 1 | 2) {
     this.vote = vote;
@@ -63,6 +61,4 @@ export class CardComponent implements OnInit, AfterViewInit {
     const total = this.person.vote.total;
     this.like = likes / total * 100
   }
-
-  ngAfterViewInit(): void {}
 }
