@@ -293,6 +293,9 @@ $height: 310px;
 }
 
 @media screen and (max-width: 600px) {
+  .header {
+    background-position: right;
+  }
   .cards {
     grid-template-columns: 1fr;
     grid-auto-rows: 400px;
