@@ -41,7 +41,6 @@ export class CardComponent implements OnInit, AfterViewInit {
       return
     }
     this.openModal()
-    this.onVote.emit()
     this.isVote = true
     this.person.vote.total += 1
     if (this.vote === 1) {
@@ -50,6 +49,7 @@ export class CardComponent implements OnInit, AfterViewInit {
       this.person.vote.dislike += 1
     }
     this.calculateVote()
+    this.onVote.emit()
   }
 
   private openModal() {

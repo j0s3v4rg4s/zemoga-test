@@ -10,10 +10,18 @@ export class HomeComponent implements OnInit {
   persons: PersonModel[] = [];
 
   constructor() {
-    fetch('/assets/data.json')
-      .then((resp) => resp.json())
-      .then((data) => (this.persons = data));
+    if (!!localStorage['persons']) {
+      this.persons = JSON.parse(localStorage['persons']);
+    } else {
+      fetch('/assets/data.json')
+        .then((resp) => resp.json())
+        .then((data) => (this.persons = data));
+    }
   }
 
   ngOnInit(): void {}
+
+  saveVote() {
+    localStorage['persons'] = JSON.stringify(this.persons);
+  }
 }
